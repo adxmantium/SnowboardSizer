@@ -82,6 +82,12 @@ export const modal = StyleSheet.create({
     color: theme.shade5,
     fontSize: 20,
   },
+  title: {
+    color: theme.shade5,
+    fontSize: 20,
+    marginBottom: 20,
+    fontWeight: '600',
+  },
   parag: {
     marginBottom: 20,
   },
@@ -89,11 +95,13 @@ export const modal = StyleSheet.create({
     color: theme.shade5,
     fontSize: 18,
     fontWeight: '600',
+    marginBottom: 3,
   },
   val: {
     color: theme.shade5,
     fontSize: 16,
     fontWeight: '400',
+    lineHeight: 23,
   }
 });
 

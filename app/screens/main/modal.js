@@ -5,6 +5,7 @@ import {
 	Text,
 	View,
 	Modal,
+	ScrollView,
 	TouchableOpacity
 } from 'react-native'
 
@@ -34,9 +35,10 @@ export default ({ dispatch, type }) => {
 						<Text style={modal.closeTxt}>Close</Text>
 					</TouchableOpacity>
 
-					<Text>{ info.title }</Text>
-
-					{ info.body.map((x, i) => <Line key={i} {...x} />) }
+					<ScrollView>
+						<Text style={modal.title}>{ info.title }</Text>
+						{ info.body.map((x, i) => <Line key={i} {...x} />) }
+					</ScrollView>
 
 				</View>
 
