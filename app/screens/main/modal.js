@@ -14,6 +14,9 @@ import { toggleModal } from './../../actions'
 // styles
 import { modal } from './../../styles/main'
 
+// constants
+import { DESCRIPTIONS } from './../../constants'
+
 export default ({ dispatch }) => (
 	<Modal
 		visible={true}

@@ -9,6 +9,39 @@ export const ACTIONS = {
 }
 
 
+// detailed descriptions
+const rideDescription = {
+	title: 'Snowboard Ride Style',
+	body: [
+		{label: 'Freestyle', value: "This style of board is for those looking to do some runs in the park, pipe, and rails. This board is sized on the shorter side of your range. It's more lightweight and will give you more manuverability/control over your board."},
+		{label: 'All-Mountain', value: 'This is an all-around riding style. If you want a board that is versatile that you can take off jumps and be able zig-zag through some trees, this style board is for you. The size of this style of board is between Freestyle and Freeride.'},
+		{label: 'Freeride', value: 'This style of board is for those who generally ride backcountry. This board style is sized on the longer side of the size range. It will give you more stability, but less turning ability.'},
+	],
+}
+
+const weightDescription = {
+	title: 'Snowboard Length',
+	body: [
+		{label: '', value: ''},
+		{label: '', value: ''},
+		{label: '', value: ''},
+	],
+}
+
+const bootDescription = {
+	title: 'Snowboard Width',
+	body: [
+		{label: '', value: ''},
+	],
+}
+
+export const DESCRIPTIONS = {
+	ride: rideDescription,
+	boot: bootDescription,
+	weight: weightDescription,
+}
+
+
 // Weight constants
 export const WEIGHT_MIN = 30
 export const WEIGHT_MAX = 201
