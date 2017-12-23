@@ -17,7 +17,7 @@ import { main } from './../../styles/main'
 
 class Main extends Component {
 	render(){
-		const { boardWidth } = this.props._board;
+		const { boardWidth, boardLength } = this.props._board;
 
 		return (
 			<View style={main.container}>
@@ -33,7 +33,7 @@ class Main extends Component {
 			        	<View>
 				            <Text style={main.resultTitle}>Your Snowboard Size Range:</Text>
 				            <Text style={main.resultLabel}>
-				            	Length: <Text style={main.resultVal}>156-159 cm</Text>
+				            	Length: <Text style={main.resultVal}>{ boardLength } cm</Text>
 				            </Text>
 				            <Text style={main.resultLabel}>
 				            	Width: <Text style={main.resultVal}>{ boardWidth }</Text>

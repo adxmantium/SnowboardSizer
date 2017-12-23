@@ -1,11 +1,15 @@
 // /screens/adjusters/weight.js
 
+import { connect } from 'react-redux'
 import React, { Component } from 'react'
 import {
 	Text,
 	View,
   Slider,
 } from 'react-native'
+
+// actions
+import { updateLength } from './../../actions'
 
 // styles
 import { adj } from './../../styles/adjusters'
@@ -14,16 +18,17 @@ import { theme } from './../../styles/_global'
 // constants
 import { WEIGHT_MIN, WEIGHT_MAX } from './../../constants'
 
-export default class WeightAdjuster extends Component{
+class WeightAdjuster extends Component{
   constructor(props){
     super(props);
 
     this.state = {
-      weight: 100,
+      weight: props._board.weight,
     }
   }
 
   render(){
+    const { dispatch } = this.props;
     const { weight } = this.state;
 
     return (
@@ -33,7 +38,7 @@ export default class WeightAdjuster extends Component{
 
           <View style={adj.header}>
             <Text style={adj.title}>Your Weight:</Text>
-            <Text style={adj.value}>{ weight } lbs</Text>
+            <Text style={adj.value}>{ weight == WEIGHT_MAX ? `${weight}+` : weight } lbs</Text>
           </View>
 
           <Slider 
@@ -44,7 +49,7 @@ export default class WeightAdjuster extends Component{
             minimumTrackTintColor={ theme.shade3 }
             maximumTrackTintColor={ theme.shade4 }
             onValueChange={ weight => this.setState({ weight }) } 
-            onSlidingComplete={ size => dispatch( updateLength({ size }) ) }
+            onSlidingComplete={ weight => dispatch( updateLength({ weight }) ) }
           />
 
         </View>
@@ -53,3 +58,11 @@ export default class WeightAdjuster extends Component{
     );
   }
 }
+
+const mapStateToProps = (state, props) => {
+  return {
+    _board: state._board,
+  }
+}
+
+export default connect(mapStateToProps)(WeightAdjuster);

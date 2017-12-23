@@ -1,5 +1,6 @@
 // /screens/adjusters/weight.js
 
+import { connect } from 'react-redux'
 import React, { Component } from 'react'
 import {
 	Text,
@@ -7,13 +8,16 @@ import {
   TouchableOpacity,
 } from 'react-native'
 
+// actions
+import { updateLength } from './../../actions'
+
 // styles
 import { adj } from './../../styles/adjusters'
 
 // constants
 import { RIDE_STYLES } from './../../constants'
 
-export default class RideAdjuster extends Component{
+class RideAdjuster extends Component{
   constructor(props){
     super(props); 
 
@@ -22,7 +26,10 @@ export default class RideAdjuster extends Component{
     };
   }
 
-  _edit = ride => this.setState({ ride });
+  _edit = ride => {
+    this.setState({ ride });
+    this.props.dispatch( updateLength({ ride }) );
+  }
 
   render(){
     const { ride } = this.state;
@@ -53,3 +60,11 @@ const RideStyleButton = ({ name, onPress, ride }) => (
 
   </TouchableOpacity>
 )
+
+const mapStateToProps = (state, props) => {
+  return {
+    _board: state._board,
+  }
+}
+
+export default connect(mapStateToProps)(RideAdjuster);
