@@ -17,7 +17,7 @@ import { main } from './../../styles/main'
 
 class Main extends Component {
 	render(){
-		const { bootSizeLabel } = this.props._board;
+		const { boardWidth } = this.props._board;
 
 		return (
 			<View style={main.container}>
@@ -36,7 +36,7 @@ class Main extends Component {
 				            	Length: <Text style={main.resultVal}>156-159 cm</Text>
 				            </Text>
 				            <Text style={main.resultLabel}>
-				            	Width: <Text style={main.resultVal}>{ bootSizeLabel }</Text>
+				            	Width: <Text style={main.resultVal}>{ boardWidth }</Text>
 				            </Text>
 			        	</View>
 			        </View>

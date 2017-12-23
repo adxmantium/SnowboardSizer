@@ -2,12 +2,12 @@
 
 import { ACTIONS } from './../constants'
 
-export const updateBoot = data => ({
-	type: ACTIONS.UPDATE_BOOT,
+export const updateWidth = data => ({
+	type: ACTIONS.UPDATE_WIDTH,
 	payload: data,
 })
 
-export const updateBoard = data => ({
-	type: ACTIONS.UPDATE_BOARD,
+export const updateLength = data => ({
+	type: ACTIONS.UPDATE_LENGTH,
 	payload: data,
 })

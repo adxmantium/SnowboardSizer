@@ -37,13 +37,15 @@ export default class WeightAdjuster extends Component{
           </View>
 
           <Slider 
-            minimumValue={ WEIGHT_MIN } 
-            maximumValue={ WEIGHT_MAX }
             step={ 1 }
             value={ weight }
+            minimumValue={ WEIGHT_MIN } 
+            maximumValue={ WEIGHT_MAX }
             minimumTrackTintColor={ theme.shade3 }
             maximumTrackTintColor={ theme.shade4 }
-            onValueChange={ weight => this.setState({ weight }) } />
+            onValueChange={ weight => this.setState({ weight }) } 
+            onSlidingComplete={ size => dispatch( updateLength({ size }) ) }
+          />
 
         </View>
 

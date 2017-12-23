@@ -3,8 +3,8 @@
 
 // actions
 export const ACTIONS = {
-	UPDATE_BOOT: 'UPDATE_BOOT',
-	UPDATE_BOARD: 'UPDATE_BOARD',
+	UPDATE_WIDTH: 'UPDATE_WIDTH',
+	UPDATE_LENGTH: 'UPDATE_LENGTH',
 }
 
 
@@ -38,7 +38,7 @@ export const BOOT_SCALE = {
 	wide: 'Wide',
 }
 
-export const determineBootSize = ({ gender, size }) => {
+export const determineBoardWidth = ({ gender, size }) => {
 
 	if( gender == 0 ){
 		if( size >= 11 ) return BOOT_SCALE.wide; // largest 
@@ -52,6 +52,6 @@ export const determineBootSize = ({ gender, size }) => {
 
 }
 
-export const determineBoardSize = ({ ride, weight }) => {
+export const determineBoardLength = ({ ride, weight }) => {
 
 }

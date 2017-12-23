@@ -10,7 +10,7 @@ import {
 } from 'react-native'
 
 // actions
-import { updateBoot } from './../../actions'
+import { updateWidth } from './../../actions'
 
 // styles
 import { adj } from './../../styles/adjusters'
@@ -33,7 +33,7 @@ class BootAdjuster extends Component{
     const gender = g == 0 ? 1 : 0;
 
     this.setState({ gender });
-    this.props.dispatch( updateBoot({ gender }) );
+    this.props.dispatch( updateWidth({ gender }) );
   }
 
   render(){
@@ -65,7 +65,7 @@ class BootAdjuster extends Component{
           minimumTrackTintColor={ theme.shade3 }
           maximumTrackTintColor={ theme.shade4 }
           onValueChange={ size => this.setState({ size }) }
-          onSlidingComplete={ size => dispatch( updateBoot({ size }) ) }
+          onSlidingComplete={ size => dispatch( updateWidth({ size }) ) }
         />
 
       </View>
