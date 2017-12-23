@@ -9,7 +9,7 @@ import {
 } from 'react-native'
 
 // actions
-import { updateLength } from './../../actions'
+import { updateLength, toggleModal } from './../../actions'
 
 // styles
 import { adj } from './../../styles/adjusters'
@@ -32,13 +32,16 @@ class RideAdjuster extends Component{
   }
 
   render(){
+    const { dispatch } = this.props;
     const { ride } = this.state;
 
     return (
       <View style={adj.container}>
 
         <View style={adj.header}>
-          <Text style={adj.title}>Your Ride Style:</Text>
+          <TouchableOpacity onPress={() => dispatch( toggleModal({modal: 'ride'}) )}>
+            <Text style={adj.title}>Your Ride Style:</Text>
+          </TouchableOpacity>
           <Text style={adj.value}>{ ride }</Text>
         </View>
 

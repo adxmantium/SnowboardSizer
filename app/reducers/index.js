@@ -22,6 +22,9 @@ export default (state = init, action) => {
 
 	switch ( action.type ) {
 
+		case ACTIONS.TOGGLE_MODAL:
+			return {...state, ...action.payload};
+
 		case ACTIONS.UPDATE_WIDTH:
 			// update state w/ new values
 			newState = {...state, ...action.payload};
@@ -44,7 +47,7 @@ export default (state = init, action) => {
 			newState.boardLength = determineBoardLength({ ride, weight });
 
 			// trigger render w/ new state
-			return newState;
+			return newState;	
 
 		default: return state;
 

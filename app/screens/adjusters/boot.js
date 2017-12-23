@@ -10,7 +10,7 @@ import {
 } from 'react-native'
 
 // actions
-import { updateWidth } from './../../actions'
+import { updateWidth, toggleModal } from './../../actions'
 
 // styles
 import { adj } from './../../styles/adjusters'
@@ -44,7 +44,10 @@ class BootAdjuster extends Component{
       <View style={adj.container}>
 
         <View style={adj.header}>
-          <Text style={adj.title}>Your Boot Size:</Text>
+
+          <TouchableOpacity onPress={() => dispatch( toggleModal({modal: 'boot'}) )}>
+            <Text style={adj.title}>Your Boot Size:</Text>
+          </TouchableOpacity>
 
           <View style={adj.headInner}>
             <Text style={adj.value}>{ size === BOOT_MAX ? `${size}+` : size }</Text>

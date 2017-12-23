@@ -65,3 +65,22 @@ export const main = StyleSheet.create({
     fontWeight: '300',
   },
 });
+
+
+export const modal = StyleSheet.create({
+  container: {
+    backgroundColor: 'rgba(0,0,0,0.8)',
+    flex: 1,
+    padding: 20,
+  },
+  closeBtn: {
+    alignSelf: 'flex-end',
+    marginBottom: 40,
+    marginTop: 15,
+  },
+  closeTxt: {
+    color: theme.shade5,
+    fontSize: 20,
+  }
+});
+

@@ -8,6 +8,7 @@ import {
 } from 'react-native'
 
 // components
+import InfoModal from './modal'
 import RideAdjuster from './../adjusters/ride'
 import BootAdjuster from './../adjusters/boot'
 import WeightAdjuster from './../adjusters/weight'
@@ -29,7 +30,7 @@ class Main extends Component {
 	}
 
 	render(){
-		const { boardWidth, boardLength } = this.props._board;
+		const { boardWidth, boardLength, modal } = this.props._board;
 		const { orientation } = this.state;
 		const isLandscape = orientation === 'landscape';
 
@@ -61,6 +62,8 @@ class Main extends Component {
 			            <RideAdjuster />
 		          	</View>
 		        </View>
+
+		        { modal && <InfoModal type={modal} {...this.props} /> }
 
 		    </View>
 		);

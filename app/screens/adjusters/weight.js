@@ -6,10 +6,11 @@ import {
 	Text,
 	View,
   Slider,
+  TouchableOpacity,
 } from 'react-native'
 
 // actions
-import { updateLength } from './../../actions'
+import { updateLength, toggleModal } from './../../actions'
 
 // styles
 import { adj } from './../../styles/adjusters'
@@ -37,7 +38,9 @@ class WeightAdjuster extends Component{
         <View style={adj.innerContainer}>
 
           <View style={adj.header}>
-            <Text style={adj.title}>Your Weight:</Text>
+            <TouchableOpacity onPress={() => dispatch( toggleModal({modal: 'weight'}) )}>
+              <Text style={adj.title}>Your Weight:</Text>
+            </TouchableOpacity>
             <Text style={adj.value}>{ weight == WEIGHT_MAX ? `${weight}+` : weight } lbs</Text>
           </View>
 
