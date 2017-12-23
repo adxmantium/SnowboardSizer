@@ -16,6 +16,7 @@ export const GENDER_MAP = {
 }
 
 
+
 // Ride constants
 export const RIDE_STYLES = [
 	{name: 'Freestyle'},
