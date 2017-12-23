@@ -46,8 +46,8 @@ export default ({ dispatch, type }) => {
 }
 
 const Line = ({ label, value }) => (
-	<View>
-		{ !!label && <Text>{ label }</Text> }
-		<Text>{ value }</Text>
+	<View style={modal.parag}>
+		{ !!label && <Text style={modal.label}>{ label }</Text> }
+		<Text style={modal.val}>{ value }</Text>
 	</View>
 )

@@ -81,6 +81,19 @@ export const modal = StyleSheet.create({
   closeTxt: {
     color: theme.shade5,
     fontSize: 20,
+  },
+  parag: {
+    marginBottom: 20,
+  },
+  label: {
+    color: theme.shade5,
+    fontSize: 18,
+    fontWeight: '600',
+  },
+  val: {
+    color: theme.shade5,
+    fontSize: 16,
+    fontWeight: '400',
   }
 });
 
