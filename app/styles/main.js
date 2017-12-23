@@ -17,8 +17,14 @@ export const main = StyleSheet.create({
     backgroundColor: theme.shade3,
     paddingBottom: 5,
   },
+  navLandscape: {
+    height: 45,
+  },
   body: {
     flex: 1,
+  },
+  bodyLandscape: {
+    flexDirection: 'row',
   },
   navTitle: {
     color: theme.shade5,
@@ -31,9 +37,17 @@ export const main = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  resultContainerLandscape: {
+    height: '100%',
+    flex: 1,
+  },
   adjusterContainer: {
     height: `${100-resultHeight}%`,
   }, 
+  adjusterContainerLandscape: {
+    height: '100%',
+    flex: 1,
+  },
   resultTitle: {
     color: theme.shade5,
     fontSize: 20,
