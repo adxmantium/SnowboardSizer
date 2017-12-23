@@ -22,16 +22,16 @@ const rideDescription = {
 const weightDescription = {
 	title: 'Snowboard Length',
 	body: [
-		{label: '', value: ''},
-		{label: '', value: ''},
-		{label: '', value: ''},
+		{label: '', value: 'Test'},
+		{label: '', value: 'test'},
+		{label: '', value: 'test'},
 	],
 }
 
 const bootDescription = {
 	title: 'Snowboard Width',
 	body: [
-		{label: '', value: ''},
+		{label: '', value: "When determining the right width of your snowboard, you will want to first determine your boot size. It is completely ok, actually preferred, to have your toes and heels just slightly over the edge of your board. Too much and you will experience toe/heel drag which will slow you down when unintended."},
 	],
 }
 

@@ -17,22 +17,37 @@ import { modal } from './../../styles/main'
 // constants
 import { DESCRIPTIONS } from './../../constants'
 
-export default ({ dispatch }) => (
-	<Modal
-		visible={true}
-		transparent={true}
-		animationType="fade"
-		onRequestClose={() => {}}>
+export default ({ dispatch, type }) => {
 
-			<View style={modal.container}>
+	const info = DESCRIPTIONS[type];
 
-				<TouchableOpacity style={modal.closeBtn} onPress={ () => dispatch( toggleModal({modal: null}) ) }>
-					<Text style={modal.closeTxt}>Close</Text>
-				</TouchableOpacity>
+	return (
+		<Modal
+			visible={true}
+			transparent={true}
+			animationType="fade"
+			onRequestClose={() => {}}>
 
-				<Text>his</Text>
+				<View style={modal.container}>
 
-			</View>
+					<TouchableOpacity style={modal.closeBtn} onPress={ () => dispatch( toggleModal({modal: null}) ) }>
+						<Text style={modal.closeTxt}>Close</Text>
+					</TouchableOpacity>
 
-	</Modal>
+					<Text>{ info.title }</Text>
+
+					{ info.body.map((x, i) => <Line key={i} {...x} />) }
+
+				</View>
+
+		</Modal>
+	)
+
+}
+
+const Line = ({ label, value }) => (
+	<View>
+		{ !!label && <Text>{ label }</Text> }
+		<Text>{ value }</Text>
+	</View>
 )
