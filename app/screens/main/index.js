@@ -1,5 +1,6 @@
 // /screens/main/index.js
 
+import { connect } from 'react-redux'
 import React, { Component } from 'react'
 import {
 	Text,
@@ -14,8 +15,10 @@ import WeightAdjuster from './../adjusters/weight'
 // styles
 import { main } from './../../styles/main'
 
-export default class Main extends Component {
+class Main extends Component {
 	render(){
+		const { bootSizeLabel } = this.props._board;
+
 		return (
 			<View style={main.container}>
 
@@ -27,7 +30,15 @@ export default class Main extends Component {
 
 		        <View style={main.body}>
 			        <View style={main.resultContainer}>
-			            <Text>result container</Text>
+			        	<View>
+				            <Text style={main.resultTitle}>Your Snowboard Size Range:</Text>
+				            <Text style={main.resultLabel}>
+				            	Length: <Text style={main.resultVal}>156-159 cm</Text>
+				            </Text>
+				            <Text style={main.resultLabel}>
+				            	Width: <Text style={main.resultVal}>{ bootSizeLabel }</Text>
+				            </Text>
+			        	</View>
 			        </View>
 
 		        	<View style={main.adjusterContainer}>
@@ -41,3 +52,11 @@ export default class Main extends Component {
 		);
 	}
 }
+
+const mapStateToProps = (state, props) => {
+  return {
+    _board: state._board,
+  }
+}
+
+export default connect(mapStateToProps)(Main);

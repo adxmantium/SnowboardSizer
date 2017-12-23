@@ -1,6 +1,13 @@
 // /constants/index.js
 
 
+// actions
+export const ACTIONS = {
+	UPDATE_BOOT: 'UPDATE_BOOT',
+	UPDATE_BOARD: 'UPDATE_BOARD',
+}
+
+
 // Weight constants
 export const WEIGHT_MIN = 30
 export const WEIGHT_MAX = 200
@@ -22,3 +29,29 @@ export const RIDE_STYLES = [
 	{name: 'All-mountain'},
 	{name: 'Freeride'},
 ]
+
+
+// Scale
+export const BOOT_SCALE = {
+	narrow: 'Narrow',
+	regular: 'Regular',
+	wide: 'Wide',
+}
+
+export const determineBootSize = ({ gender, size }) => {
+
+	if( gender == 0 ){
+		if( size >= 11 ) return BOOT_SCALE.wide; // largest 
+		else if( size <= 5 ) return BOOT_SCALE.narrow; // smallest
+		return BOOT_SCALE.regular; // in between
+
+	}else{
+		if( size >= 8.5 ) return BOOT_SCALE.regular;
+		return BOOT_SCALE.narrow;	
+	}
+
+}
+
+export const determineBoardSize = ({ ride, weight }) => {
+
+}

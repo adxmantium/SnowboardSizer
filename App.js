@@ -4,6 +4,8 @@
  * @flow
  */
 
+import { Provider } from 'react-redux'
+import store from './app/reducers/store'
 import React, { Component } from 'react'
 import {
   Text,
@@ -15,7 +17,9 @@ import Main from './app/screens/main'
 export default class App extends Component<{}> {
   render() {
     return (
-      <Main />
+        <Provider store={store}>
+      		<Main />
+        </Provider>
     );
   }
 }

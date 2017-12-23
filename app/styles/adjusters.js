@@ -40,8 +40,14 @@ export const adj = StyleSheet.create({
     fontWeight: '600',
     color: theme.shade1,
     marginLeft: 5,
+    marginRight: 5,
     textDecorationLine: 'underline',
     textDecorationColor: theme.shade1,
+  },
+  value3: {
+    fontSize: 20,
+    fontWeight: '600',
+    color: theme.shade2,
   },
   rideContainer: {
     flexDirection: 'row',

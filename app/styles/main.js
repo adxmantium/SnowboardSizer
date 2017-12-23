@@ -33,5 +33,21 @@ export const main = StyleSheet.create({
   },
   adjusterContainer: {
     height: `${100-resultHeight}%`,
-  }
+  }, 
+  resultTitle: {
+    color: theme.shade5,
+    fontSize: 20,
+    fontWeight: '200',
+    marginBottom: 20,
+  },
+  resultLabel: {
+    fontSize: 20,
+    fontWeight: '200',
+    color: theme.shade5,
+  },
+  resultVal: {
+    color: theme.shade5,
+    fontSize: 40,
+    fontWeight: '300',
+  },
 });
