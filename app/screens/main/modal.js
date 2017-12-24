@@ -27,6 +27,7 @@ export default ({ dispatch, type }) => {
 			visible={true}
 			transparent={true}
 			animationType="fade"
+			supportedOrientations={['portrait', 'portrait-upside-down', 'landscape', 'landscape-left', 'landscape-right']}
 			onRequestClose={() => {}}>
 
 				<View style={modal.container}>
