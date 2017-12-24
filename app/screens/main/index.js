@@ -5,6 +5,7 @@ import React, { Component } from 'react'
 import {
 	Text,
 	View,
+	TouchableOpacity,
 } from 'react-native'
 
 // components
@@ -12,6 +13,9 @@ import InfoModal from './modal'
 import RideAdjuster from './../adjusters/ride'
 import BootAdjuster from './../adjusters/boot'
 import WeightAdjuster from './../adjusters/weight'
+
+// actions
+import { toggleModal } from './../../actions'
 
 // styles
 import { main } from './../../styles/main'
@@ -30,7 +34,8 @@ class Main extends Component {
 	}
 
 	render(){
-		const { boardWidth, boardLength, modal } = this.props._board;
+		const { dispatch, _board } = this.props;
+		const { boardWidth, boardLength, modal } = _board;
 		const { orientation } = this.state;
 		const isLandscape = orientation === 'landscape';
 
@@ -38,9 +43,15 @@ class Main extends Component {
 			<View style={main.container} onLayout={ this._onLayout }>
 
 		        <View style={[main.nav, isLandscape && main.navLandscape]}>
+		        	<View style={main.spacer} />
+
 		        	<Text style={main.navTitle}>
 		            	SnowboardSizer
 		        	</Text>
+
+		        	<TouchableOpacity style={main.infoBtn} onPress={ () => dispatch( toggleModal({modal: 'info'}) ) }>
+		        		<Text style={main.infoTxt}>i</Text>
+		        	</TouchableOpacity>
 		        </View>
 
 		        <View style={[main.body, isLandscape && main.bodyLandscape]}>

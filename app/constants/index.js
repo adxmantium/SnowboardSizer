@@ -14,7 +14,7 @@ const rideDescription = {
 	title: 'Snowboard Ride Style',
 	body: [
 		{label: 'Freestyle', value: "This style of board is for those looking to do some runs in the park, pipe, and rails. This board is sized on the shorter side of your range. It's more lightweight and will give you more manuverability/control over your board."},
-		{label: 'All-Mountain', value: 'This is an all-around riding style. If you want a board that is versatile that you can take off jumps and be able zig-zag through some trees, this style board is for you. The size of this style of board is between Freestyle and Freeride.'},
+		{label: 'All-Mountain', value: 'This is an all-around riding style. If you want a board that is versatile that you can take off jumps and ride powder, this style board is for you. The size of this style of board is between Freestyle and Freeride. Choose this style for beginners.'},
 		{label: 'Freeride', value: 'This style of board is for those who generally ride backcountry. This board style is sized on the longer side of the size range. It will give you more stability, but less turning ability.'},
 	],
 }
@@ -22,19 +22,26 @@ const rideDescription = {
 const weightDescription = {
 	title: 'Snowboard Length',
 	body: [
-		{label: '', value: 'Your weight is the biggest factor in determining the right board length. Your weight will let us know the range of sizes you should be looking at. Then, we use your ride style to narrow-down the range.'},
-		{label: '', value: ''},
+		{label: '', value: 'It used to be you would just hold a board upright and if it met with your chin, it was the perfect fit. Your weight is the biggest factor in determining the right board length and with it, we can tell you the range of sizes you should be looking at. Then, we use your ride style to narrow-down the range.'},
 	],
 }
 
 const bootDescription = {
 	title: 'Snowboard Width',
 	body: [
-		{label: '', value: "Your snowboard's width is determined by your boot size. It is completely ok, actually preferred, to have your toes and heels just slightly over the edge of your board. Too much and you will experience toe/heel drag which will slow you down when unintended."},
+		{label: '', value: "Your snowboard's width is determined by your boot size. It is completely ok, actually preferred, to have your toes and heels just slightly over the edge of your board. Too much and you will experience toe/heel drag which will slow you down."},
 	],
 }
 
+const infoDescription = {
+	title: 'Just FYI...',
+	body: [
+		{label: '', value: "This app is meant for beginners or those who still need help determining the right size board for them. This app will not suggest the exact size for you, but will suggest the range of sizes that may be right for you. You may receive a range with a difference of 3-4 cm, but ultimately, it will come down to you, the rider, and how the board feels as you ride it. Our hope is to help you get close to your perfect sized board. Enjoy the ride! :)"}
+	]
+}
+
 export const DESCRIPTIONS = {
+	info: infoDescription,
 	ride: rideDescription,
 	boot: bootDescription,
 	weight: weightDescription,

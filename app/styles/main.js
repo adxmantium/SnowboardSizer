@@ -11,11 +11,15 @@ export const main = StyleSheet.create({
     flex: 1,
   },
   nav: {
-    height: 65,
+    height: 60,
     justifyContent: 'flex-end',
     alignItems: 'center',
     backgroundColor: theme.shade3,
-    paddingBottom: 5,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-end',
+    paddingLeft: 15,
+    paddingRight: 15,
   },
   navLandscape: {
     height: 45,
@@ -64,6 +68,25 @@ export const main = StyleSheet.create({
     fontSize: 40,
     fontWeight: '300',
   },
+  infoBtn: {
+    borderWidth: 1,
+    borderColor: theme.shade5,
+    width: 20,
+    height: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 100,
+    marginBottom: 3,
+  },
+  infoTxt: {
+    color: theme.shade5,
+    fontWeight: '600',
+    fontSize: 12,
+  },
+  spacer: {
+    width: 20,
+    height: 20,
+  }
 });
 
 
