@@ -3,9 +3,10 @@
 import { StyleSheet, Dimensions, Platform } from 'react-native'
 import { theme } from './_global'
 
-const resultHeight = 50;
 const { height, width } = Dimensions.get('window');
 const isX = Platform.OS === 'ios' && height === 812;
+
+const resultHeight = 50;
 
 export const main = StyleSheet.create({
   container: {

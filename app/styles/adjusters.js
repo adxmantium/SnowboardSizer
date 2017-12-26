@@ -1,7 +1,10 @@
 // /styles/main.js
 
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Dimensions, Platform } from 'react-native'
 import { theme } from './_global'
+
+const { height, width } = Dimensions.get('window');
+const isSE = Platform.OS === 'ios' && height === 568;
 
 const containerPadding = 20;
 
@@ -11,9 +14,6 @@ export const adj = StyleSheet.create({
     paddingLeft: containerPadding,
     paddingRight: containerPadding,
     justifyContent: 'center',
-  },
-  innerContainer: {
-
   },
   header: {
     flexDirection: 'row',
@@ -56,12 +56,12 @@ export const adj = StyleSheet.create({
   },
   rideBtn: {
     borderRadius: 3,
-    padding: 15,
+    padding: isSE ? 8 : 15,
     backgroundColor: theme.shade4,
   },
   rideBtnActive: {
     backgroundColor: theme.shade3,
-    padding: 20,
+    padding: isSE ? 10 : 20,
   },
   rideBtnTxt: {
     color: theme.shade5,
