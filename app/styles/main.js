@@ -1,9 +1,11 @@
 // /styles/main.js
 
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Dimensions, Platform } from 'react-native'
 import { theme } from './_global'
 
 const resultHeight = 50;
+const { height, width } = Dimensions.get('window');
+const isX = Platform.OS === 'ios' && height === 812;
 
 export const main = StyleSheet.create({
   container: {
@@ -11,7 +13,7 @@ export const main = StyleSheet.create({
     flex: 1,
   },
   nav: {
-    height: 60,
+    height: isX ? 70 : 60,
     justifyContent: 'flex-end',
     alignItems: 'center',
     backgroundColor: theme.shade3,
@@ -21,14 +23,9 @@ export const main = StyleSheet.create({
     paddingLeft: 15,
     paddingRight: 15,
   },
-  navLandscape: {
-    height: 45,
-  },
   body: {
     flex: 1,
-  },
-  bodyLandscape: {
-    flexDirection: 'row',
+    paddingBottom: isX ? 25 : 0,
   },
   navTitle: {
     color: theme.shade5,
@@ -41,17 +38,9 @@ export const main = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  resultContainerLandscape: {
-    height: '100%',
-    flex: 1,
-  },
   adjusterContainer: {
     height: `${100-resultHeight}%`,
   }, 
-  adjusterContainerLandscape: {
-    height: '100%',
-    flex: 1,
-  },
   resultTitle: {
     color: theme.shade5,
     fontSize: 20,
