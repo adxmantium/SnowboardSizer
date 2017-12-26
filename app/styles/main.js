@@ -3,7 +3,7 @@
 import { StyleSheet } from 'react-native'
 import { theme } from './_global'
 
-const resultHeight = 45;
+const resultHeight = 50;
 
 export const main = StyleSheet.create({
   container: {
@@ -69,7 +69,7 @@ export const main = StyleSheet.create({
     fontWeight: '300',
   },
   infoBtn: {
-    borderWidth: 1,
+    borderWidth: 2,
     borderColor: theme.shade5,
     width: 20,
     height: 20,
@@ -80,7 +80,7 @@ export const main = StyleSheet.create({
   },
   infoTxt: {
     color: theme.shade5,
-    fontWeight: '600',
+    fontWeight: '800',
     fontSize: 12,
   },
   spacer: {

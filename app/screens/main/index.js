@@ -23,26 +23,17 @@ import { main } from './../../styles/main'
 class Main extends Component {
 	constructor(props){
 		super(props);
-		this.state = {
-			orientation: 'portrait'
-		}
-	}
-
-	_onLayout = e => {
-		const { width, height } = e.nativeEvent.layout;
-		this.setState({orientation: width > height ? 'landscape' : 'portrait'});
+		this.state = {}
 	}
 
 	render(){
 		const { dispatch, _board } = this.props;
 		const { boardWidth, boardLength, modal } = _board;
-		const { orientation } = this.state;
-		const isLandscape = orientation === 'landscape';
 
 		return (
-			<View style={main.container} onLayout={ this._onLayout }>
+			<View style={main.container}>
 
-		        <View style={[main.nav, isLandscape && main.navLandscape]}>
+		        <View style={main.nav}>
 		        	<View style={main.spacer} />
 
 		        	<Text style={main.navTitle}>
@@ -54,8 +45,8 @@ class Main extends Component {
 		        	</TouchableOpacity>
 		        </View>
 
-		        <View style={[main.body, isLandscape && main.bodyLandscape]}>
-			        <View style={[main.resultContainer, isLandscape && main.resultContainerLandscape]}>
+		        <View style={main.body}>
+			        <View style={main.resultContainer}>
 			        	<View>
 				            <Text style={main.resultTitle}>Your Snowboard Size Range:</Text>
 				            <Text style={main.resultLabel}>
@@ -67,7 +58,7 @@ class Main extends Component {
 			        	</View>
 			        </View>
 
-		        	<View style={[main.adjusterContainer, isLandscape && main.adjusterContainerLandscape]}>
+		        	<View style={main.adjusterContainer}>
 			        	<WeightAdjuster />
 			            <BootAdjuster />
 			            <RideAdjuster />
