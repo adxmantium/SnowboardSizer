@@ -5,14 +5,16 @@ import { theme } from './_global'
 
 const { height, width } = Dimensions.get('window');
 const isSE = Platform.OS === 'ios' && height === 568;
+const is_ipad = Platform.OS === 'ios' && width > 700;
 
 const containerPadding = 20;
+const ipadPadding = 150
 
 export const adj = StyleSheet.create({
   container: {
     flex: 1,
-    paddingLeft: containerPadding,
-    paddingRight: containerPadding,
+    paddingLeft: is_ipad ? ipadPadding : containerPadding,
+    paddingRight: is_ipad ? ipadPadding : containerPadding,
     justifyContent: 'center',
   },
   header: {
