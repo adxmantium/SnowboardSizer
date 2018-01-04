@@ -118,3 +118,38 @@ export const modal = StyleSheet.create({
   }
 });
 
+export const intro = StyleSheet.create({
+  container: {
+    backgroundColor: 'rgba(247, 249, 251,0.9)',
+    flex: 1,
+    padding: 20,
+  }, 
+  title: {
+    color: theme.shade5,
+    fontWeight: '700',
+    fontSize: 30,
+  },
+  slide: {
+    backgroundColor: theme.shade4, 
+    borderRadius: 3,
+  },
+  head: {
+    padding: 20,
+    borderTopRightRadius: 3,
+    borderTopLeftRadius: 3,
+  },
+  body: {
+    backgroundColor: theme.shade5,
+    borderWidth: 1,
+    borderColor: theme.shade4,
+    padding: 20,
+    borderBottomRightRadius: 3,
+    borderBottomLeftRadius: 3,
+  },
+  text: {
+    color: theme.shade4,
+    fontWeight: '200',
+    fontSize: 20,
+  },
+});
+

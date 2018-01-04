@@ -10,6 +10,7 @@ import {
 
 // components
 import InfoModal from './modal'
+import Carousel from './../carousel'
 import RideAdjuster from './../adjusters/ride'
 import BootAdjuster from './../adjusters/boot'
 import WeightAdjuster from './../adjusters/weight'
@@ -66,6 +67,7 @@ class Main extends Component {
 		        </View>
 
 		        { modal && <InfoModal type={modal} {...this.props} /> }
+		        <Carousel />
 
 		    </View>
 		);
