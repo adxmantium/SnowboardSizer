@@ -34,7 +34,7 @@ const bootDescription = {
 }
 
 const infoDescription = {
-	title: 'Just FYI...',
+	title: 'Just so you know...',
 	body: [
 		{label: '', value: "This app is meant for beginners or those who still need help determining the right size board for them. This app will not suggest the exact size for you, but will suggest the range of sizes that may be right for you. You may receive a range with a difference of 3-4 cm, but ultimately, it will come down to you, the rider, and how the board feels as you ride it. Our hope is to help you get close to your perfect sized board. Enjoy the ride! :)"}
 	]
