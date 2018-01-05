@@ -13,23 +13,8 @@ import {
 // styles
 import { intro } from './../../styles/main'
 
-const slideData = [
-	{
-		id: 'slide1',
-		title: 'Welcome!',
-		content: ['Hi there!', 'Sentence 2'],
-	},
-	{
-		id: 'slide2',
-		title: 'Factors we consider',
-		content: ['Weight, boot size, ride style', 'thats all we need to determine your board size.'],
-	},
-	{
-		id: 'slide3',
-		title: 'Enjoy!',
-		content: ["Ultimately, it's up to you, the rider to determine what feels best when you get up on the board.", "Enjoy your ride!"],
-	},
-];
+// constants
+import { slideData } from './../../constants'
 
 export default class Carousel extends Component {
 	constructor(props){
@@ -53,7 +38,7 @@ export default class Carousel extends Component {
 		this.setState({pause: true});
 
 		// after 3/4ths of a second, unpause and add 1 to index
-		setTimeout(() => this.setState({index: this.state.index + 1, pause: false}), 750);
+		setTimeout(() => this.setState({index: this.state.index + 1, pause: false}), 250);
 	}
 
 	render(){
@@ -86,7 +71,7 @@ const Slide = ({ title, content }) => (
 		</View>
 
 		<View style={intro.body}>
-			{ content.map((con, i) => <Text key={i} style={intro.text}>{ con }</Text>) }
+			{ content.map((con, i) => <Text key={i} style={[intro.text, i !== content.length - 1 && intro.notLast]}>{ con }</Text>) }
 		</View>
 
 	</Animatable.View>

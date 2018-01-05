@@ -152,6 +152,9 @@ export const intro = StyleSheet.create({
     fontWeight: '300',
     fontSize: 20,
   },
+  notLast: {
+    marginBottom: 20,
+  },
   nextBtn: {
     paddingTop: 40,
   },
