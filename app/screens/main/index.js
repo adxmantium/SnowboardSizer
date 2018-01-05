@@ -24,10 +24,19 @@ import { main } from './../../styles/main'
 class Main extends Component {
 	constructor(props){
 		super(props);
-		this.state = {}
+		this.state = {
+			showWelcomeModal: true,
+		}
+	}
+
+	_openWelcomeModal = () => this.setState({showWelcomeModal: true})
+
+	_closeWelcomeModal = () => {
+		this.setState({showWelcomeModal: false});
 	}
 
 	render(){
+		const { showWelcomeModal } = this.state;
 		const { dispatch, _board } = this.props;
 		const { boardWidth, boardLength, modal } = _board;
 
@@ -41,7 +50,7 @@ class Main extends Component {
 		            	SnowboardSizer
 		        	</Text>
 
-		        	<TouchableOpacity style={main.infoBtn} onPress={ () => dispatch( toggleModal({modal: 'info'}) ) }>
+		        	<TouchableOpacity style={main.infoBtn} onPress={ this._openWelcomeModal }>
 		        		<Text style={main.infoTxt}>i</Text>
 		        	</TouchableOpacity>
 		        </View>
@@ -67,7 +76,7 @@ class Main extends Component {
 		        </View>
 
 		        { modal && <InfoModal type={modal} {...this.props} /> }
-		        <Carousel />
+		        { showWelcomeModal && <Carousel close={ this._closeWelcomeModal } /> }
 
 		    </View>
 		);

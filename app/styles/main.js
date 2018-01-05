@@ -120,17 +120,18 @@ export const modal = StyleSheet.create({
 
 export const intro = StyleSheet.create({
   container: {
-    backgroundColor: 'rgba(247, 249, 251,0.9)',
+    backgroundColor: 'rgba(247, 249, 251,0.96)',
     flex: 1,
     padding: 20,
+    justifyContent: 'center',
   }, 
   title: {
     color: theme.shade5,
-    fontWeight: '700',
+    fontWeight: '500',
     fontSize: 30,
   },
   slide: {
-    backgroundColor: theme.shade4, 
+    backgroundColor: theme.shade3, 
     borderRadius: 3,
   },
   head: {
@@ -141,15 +142,24 @@ export const intro = StyleSheet.create({
   body: {
     backgroundColor: theme.shade5,
     borderWidth: 1,
-    borderColor: theme.shade4,
+    borderColor: theme.shade3,
     padding: 20,
     borderBottomRightRadius: 3,
     borderBottomLeftRadius: 3,
   },
   text: {
-    color: theme.shade4,
-    fontWeight: '200',
+    color: theme.shade3,
+    fontWeight: '300',
     fontSize: 20,
   },
+  nextBtn: {
+    paddingTop: 40,
+  },
+  nextBtnText: {
+    color: theme.shade3, 
+    fontSize: 24, 
+    fontWeight: '200',
+    textAlign: 'center',
+  }
 });
 
