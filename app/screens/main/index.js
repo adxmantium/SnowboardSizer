@@ -5,6 +5,7 @@ import React, { Component } from 'react'
 import {
 	Text,
 	View,
+	AsyncStorage,
 	TouchableOpacity,
 } from 'react-native'
 
@@ -25,14 +26,30 @@ class Main extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			showWelcomeModal: true,
+			showWelcomeModal: false,
+			hasSeenFirstTimeWelcomeModal: false,
 		}
+	}
+
+	componentWillMount(){
+		const get_hasSeen = AsyncStorage.getItem('hasSeenFirstTimeWelcomeModal');
+
+		get_hasSeen.then(hasSeen => {
+			if( !hasSeen ) this.setState({showWelcomeModal: true});
+			else this.setState({hasSeenFirstTimeWelcomeModal: true});
+		});
 	}
 
 	_openWelcomeModal = () => this.setState({showWelcomeModal: true})
 
 	_closeWelcomeModal = () => {
 		this.setState({showWelcomeModal: false});
+		if( !this.state.hasSeenFirstTimeWelcomeModal ) this._setStorage({key: 'hasSeenFirstTimeWelcomeModal', val: '1'});
+	}
+
+	_setStorage = ({ key, val }) => {
+		AsyncStorage.setItem(key, val);
+		this.setState({hasSeenFirstTimeWelcomeModal: true});
 	}
 
 	render(){
