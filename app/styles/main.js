@@ -5,6 +5,7 @@ import { theme } from './_global'
 
 const { height, width } = Dimensions.get('window');
 const isX = Platform.OS === 'ios' && height === 812;
+const isSE = Platform.OS === 'ios' && height === 568;
 
 const resultHeight = 50;
 
@@ -128,7 +129,7 @@ export const intro = StyleSheet.create({
   title: {
     color: theme.shade5,
     fontWeight: '500',
-    fontSize: 30,
+    fontSize: isSE ? 22 : 30,
   },
   slide: {
     backgroundColor: theme.shade3, 
@@ -150,7 +151,7 @@ export const intro = StyleSheet.create({
   text: {
     color: theme.shade3,
     fontWeight: '300',
-    fontSize: 20,
+    fontSize: isSE ? 16 : 20,
   },
   notLast: {
     marginBottom: 20,
