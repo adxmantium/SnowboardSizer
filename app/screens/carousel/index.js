@@ -80,7 +80,7 @@ const Slide = ({ title, content }) => (
 const NextButton = ({ onPress, isLast }) => (
 	<Animatable.View animation="fadeInLeft">
 		<TouchableOpacity style={intro.nextBtn} onPress={ onPress }>
-			<Text style={intro.nextBtnText}>{ isLast ? 'Done' : 'Next' }</Text>
+			<Text style={intro.nextBtnText}>{ isLast ? "Let's Get Started!" : 'Next' }</Text>
 		</TouchableOpacity>
 	</Animatable.View>
 )

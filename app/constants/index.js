@@ -15,25 +15,27 @@ export const slideData = [
 		id: 'slide1',
 		title: 'Welcome!',
 		content: [
-			"This app is really meant for beginners or anyone who still needs help determining the right size board for them.",
-			"Our goal is to help you find your board size so that you are able to start shopping online for your first/next board.",
+			"We know snowboard shopping can be a real mountain to climb, especially when you don't know your board size.",
+			"This app is meant to help beginners or anyone who still needs help determining the right size board for them.",
+			"Our goal is to help you find your size so that you are able to shop for snowboards with confidence.",
 		],
 	},
 	{
 		id: 'slide2',
-		title: 'Factors we consider',
+		title: 'Factors We Consider',
 		content: [
-			"Weight, boot size, ride style", 
-			"thats all we need to determine your board size."
+			"Weight, Ride Style, Boot Size.", 
+			"We have carved out the most important factors from top sources such as burton.com, evo.com, the-house.com, and others.",
+			"We narrowed it down to these three factors: Weight and Ride Style to determine the length of the board, in centimeters(cm), and Boot Size to determine board width.",
 		],
 	},
 	{
 		id: 'slide3',
 		title: 'Enjoy!',
 		content: [
-			"You may receive a range with a difference of 3-4 cm, but ultimately, it will come down to you, the rider, and how the board feels as you ride it.",
-			"Our hope is to help you get close to your perfect sized board.",
-			"Enjoy the ride! :)",
+			"Ultimately, it will come down to you, the rider, and how the board feels as you ride it.",
+			"We hope to get you close to that perfect ride, or at least get you ramped up to it.",
+			"Ready?"
 		],
 	},
 ];
