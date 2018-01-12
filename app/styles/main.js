@@ -1,7 +1,7 @@
 // /styles/main.js
 
 import { StyleSheet, Dimensions, Platform } from 'react-native'
-import { theme } from './_global'
+import { theme, androidFontFamily } from './_global'
 
 const { height, width } = Dimensions.get('window');
 const isX = Platform.OS === 'ios' && height === 812;
@@ -9,7 +9,7 @@ const isSE = Platform.OS === 'ios' && height === 568;
 
 const resultHeight = 50;
 
-export const main = StyleSheet.create({
+const _main = {
   container: {
     backgroundColor: theme.shade5,
     flex: 1,
@@ -78,10 +78,11 @@ export const main = StyleSheet.create({
     width: 20,
     height: 20,
   }
-});
+};
 
 
-export const modal = StyleSheet.create({
+// styles for info modal
+const _modal = {
   container: {
     backgroundColor: 'rgba(0,0,0,0.8)',
     flex: 1,
@@ -117,9 +118,11 @@ export const modal = StyleSheet.create({
     fontWeight: '400',
     lineHeight: 23,
   }
-});
+};
 
-export const intro = StyleSheet.create({
+
+// style for intro modal
+const _intro = {
   container: {
     backgroundColor: 'rgba(247, 249, 251,0.96)',
     flex: 1,
@@ -165,5 +168,30 @@ export const intro = StyleSheet.create({
     fontWeight: '200',
     textAlign: 'center',
   }
-});
+};
 
+// adjust styling for android
+if( Platform.OS === 'android' ){
+
+  _main.nav.height = 50;
+  _modal.val.lineHeight = 28;
+
+  const fontFamilyAdditions = [
+    _main.navTitle,
+    _main.resultTitle,
+    _main.resultLabel,
+    _main.resultVal,
+    _modal.closeTxt,
+    _modal.title,
+    _modal.label,
+    _modal.val,
+    _intro.title, 
+  ];
+
+  fontFamilyAdditions.forEach(prop => prop.fontFamily = androidFontFamily);
+
+}
+
+export const main = StyleSheet.create(_main);
+export const modal = StyleSheet.create(_modal);
+export const intro = StyleSheet.create(_intro);

@@ -9,3 +9,5 @@ export const theme = {
   shade4: '#8FC1E3',
   shade5: '#F7F9FB',
 }
+
+export const androidFontFamily = 'sans-serif-thin'

@@ -1,7 +1,7 @@
 // /styles/main.js
 
 import { StyleSheet, Dimensions, Platform } from 'react-native'
-import { theme } from './_global'
+import { theme, androidFontFamily } from './_global'
 
 const { height, width } = Dimensions.get('window');
 const isSE = Platform.OS === 'ios' && height === 568;
@@ -10,7 +10,7 @@ const is_ipad = Platform.OS === 'ios' && width > 700;
 const containerPadding = 20;
 const ipadPadding = 150
 
-export const adj = StyleSheet.create({
+const _adj = {
   container: {
     flex: 1,
     paddingLeft: is_ipad ? ipadPadding : containerPadding,
@@ -69,4 +69,25 @@ export const adj = StyleSheet.create({
     color: theme.shade5,
     fontWeight: '500',
   }
-});
+};
+
+if( Platform.OS === 'android' ){
+
+  _adj.title.fontSize = 16;
+  _adj.title.fontWeight = '500';
+  _adj.rideBtn.padding = 9;
+  _adj.rideBtnActive.padding = 11;
+
+  const fontFamilyAdditions = [
+    _adj.title, 
+    _adj.value,
+    _adj.value2,
+    _adj.value3,
+    _adj.rideBtnTxt,
+  ];
+
+  fontFamilyAdditions.forEach(prop => prop.fontFamily = androidFontFamily);
+
+}
+
+export const adj = StyleSheet.create(_adj);
