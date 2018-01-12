@@ -175,6 +175,7 @@ if( Platform.OS === 'android' ){
 
   _main.nav.height = 50;
   _modal.val.lineHeight = 28;
+  _intro.text.fontSize = 18;
 
   const fontFamilyAdditions = [
     _main.navTitle,
