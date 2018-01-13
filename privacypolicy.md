@@ -1,4 +1,4 @@
-#Privacy Policy
+# Privacy Policy
 
 I, Adam Adams, built the SnowboardSizer app as a free app. This service is provided by Adam Adams at no cost and is intended for use as is.
 
